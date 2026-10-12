@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python + C# | 21 দিনের রোডম্যাপ</title>
+<style>
+:root{--bg:#f6f8fc;--card:#fff;--ink:#192235;--muted:#63708a;--accent:#4f46e5;--line:#e4e8f1;--done:#eaf8ef;--danger:#dc2626}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Bengali",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(135deg,#312e81,#4f46e5);color:#fff;padding:42px 20px 32px} .wrap{max-width:1000px;margin:auto}h1{margin:0;font-size:clamp(1.7rem,4vw,2.7rem)}header p{max-width:760px;margin:10px 0 0;color:#e5e7ff}
+main{padding:26px 20px 50px}.toolbar{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);padding:16px 18px;border-radius:14px;margin-bottom:24px;box-shadow:0 4px 14px #2832560a}.progress{font-weight:700}.bar{height:10px;background:#e8eaf4;border-radius:99px;overflow:hidden;min-width:220px;flex:1;max-width:420px}.bar span{display:block;height:100%;width:0;background:#22c55e;transition:.25s}button{border:0;background:var(--danger);color:#fff;border-radius:8px;padding:9px 13px;font-weight:700;cursor:pointer}
+.phase{margin:26px 0}.phase h2{font-size:1.35rem;margin:0 0 5px}.phase>p{margin:0 0 12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.day{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;transition:.2s}.day:has(input:checked){background:var(--done);border-color:#86d3a0}.day input{width:22px;height:22px;flex:none;margin-top:3px;accent-color:#16a34a;cursor:pointer}.day h3{margin:0;font-size:1rem}.day p{margin:5px 0 0;color:var(--muted);font-size:.92rem}.day code{background:#edf0f7;padding:1px 4px;border-radius:4px;color:#303c5a}.notes{margin-top:28px;background:#eef2ff;border-left:4px solid var(--accent);padding:16px 18px;border-radius:0 12px 12px 0}.notes h2{margin:0 0 7px;font-size:1.2rem}.notes ul{margin:0;padding-left:21px}.footer{color:var(--muted);font-size:.88rem;margin-top:28px;text-align:center}@media print{button,.toolbar{display:none}body{background:#fff}header{padding:18px}.day{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>Python + C# — ২১ দিনের Foundation Roadmap</h1><p>লক্ষ্য: Python-এ fluent হওয়া, C# দিয়ে একই concept compare করা, এবং library ছাড়া core programming ও OOP foundation শক্ত করা। প্রতিদিনের কাজ শেষ হলে টিক দিন—অগ্রগতি এই browser-এ save থাকবে।</p></div></header>
+<main class="wrap">
+<section class="toolbar"><strong class="progress" id="progress">0 / 21 দিন সম্পন্ন</strong><div class="bar" aria-label="Progress"><span id="bar"></span></div><button id="reset">সব টিক মুছুন</button></section>
+<section class="phase"><h2>Phase 1 — Basic Foundation (Day 1–7)</h2><p>Programming-এর মৌলিক logic, control flow এবং input/output বুঝুন।</p><div class="grid">
+<label class="day"><input type="checkbox" data-day="1"><div><h3>Day 1 — Setup ও প্রথম Program</h3><p>Python ও C# environment, <code>print</code>/<code>Console.WriteLine</code>, comments, program run করার flow।</p></div></label>
+<label class="day"><input type="checkbox" data-day="2"><div><h3>Day 2 — Variables ও Data Types</h3><p><code>int</code>, <code>float/double</code>, <code>str/string</code>, <code>bool</code>; dynamic বনাম static typing।</p></div></label>
+<label class="day"><input type="checkbox" data-day="3"><div><h3>Day 3 — Operators ও Type Conversion</h3><p>Arithmetic, comparison, logical operators; casting/conversion; mini calculator।</p></div></label>
+<label class="day"><input type="checkbox" data-day="4"><div><h3>Day 4 — Input ও Output</h3><p><code>input()</code> বনাম <code>Console.ReadLine()</code>; formatted output; user profile program।</p></div></label>
+<label class="day"><input type="checkbox" data-day="5"><div><h3>Day 5 — Conditions</h3><p><code>if/elif/else</code> বনাম <code>if/else if/else</code>; grade calculator ও odd/even checker।</p></div></label>
+<label class="day"><input type="checkbox" data-day="6"><div><h3>Day 6 — Loops</h3><p><code>for</code>, <code>while</code>, <code>break</code>, <code>continue</code>; multiplication table, prime checker।</p></div></label>
+<label class="day"><input type="checkbox" data-day="7"><div><h3>Day 7 — Mini Project</h3><p>Number Guessing Game: loop, condition, input, random logic; দুই language-এ লিখুন।</p></div></label>
+</div></section>
+<section class="phase"><h2>Phase 2 — Intermediate (Day 8–14)</h2><p>Reusable code, collections এবং problem-solving habit তৈরি করুন।</p><div class="grid">
+<label class="day"><input type="checkbox" data-day="8"><div><h3>Day 8 — Functions / Methods</h3><p>Parameters, return value, scope; <code>def</code> বনাম typed method; ৫টি utility function।</p></div></label>
+<label class="day"><input type="checkbox" data-day="9"><div><h3>Day 9 — Function Depth</h3><p>Default arguments, named arguments, recursion-এর basic ধারণা; factorial ও Fibonacci।</p></div></label>
+<label class="day"><input type="checkbox" data-day="10"><div><h3>Day 10 — Strings</h3><p>Indexing, slicing বনাম substring, loop করে string process, validation; palindrome checker।</p></div></label>
+<label class="day"><input type="checkbox" data-day="11"><div><h3>Day 11 — Arrays ও Lists</h3><p>Python list বনাম C# array ও <code>List&lt;T&gt;</code>; add/remove/search/sort manual practice।</p></div></label>
+<label class="day"><input type="checkbox" data-day="12"><div><h3>Day 12 — Dictionary / Map</h3><p>Key-value data; Python <code>dict</code> বনাম C# <code>Dictionary&lt;K,V&gt;</code>; phonebook।</p></div></label>
+<label class="day"><input type="checkbox" data-day="13"><div><h3>Day 13 — Algorithm Thinking</h3><p>Linear search, basic sorting, counting frequency, nested loops; আগে pseudocode, পরে code।</p></div></label>
+<label class="day"><input type="checkbox" data-day="14"><div><h3>Day 14 — Mini Project</h3><p>Contact Manager: add, list, search, delete; একই features Python ও C#-এ।</p></div></label>
+</div></section>
+<section class="phase"><h2>Phase 3 — Advanced Foundation & OOP (Day 15–21)</h2><p>Object-oriented design, errors, files এবং complete console project।</p><div class="grid">
+<label class="day"><input type="checkbox" data-day="15"><div><h3>Day 15 — Class ও Object</h3><p>Attributes, methods, constructor; <code>self</code> বনাম <code>this</code>; Book ও Student class।</p></div></label>
+<label class="day"><input type="checkbox" data-day="16"><div><h3>Day 16 — Encapsulation</h3><p>Public/private idea, C# properties, validation; BankAccount class তৈরি করুন।</p></div></label>
+<label class="day"><input type="checkbox" data-day="17"><div><h3>Day 17 — Inheritance</h3><p>Base/derived class, code reuse, constructor chaining; Vehicle → Car/Bike hierarchy।</p></div></label>
+<label class="day"><input type="checkbox" data-day="18"><div><h3>Day 18 — Polymorphism ও Abstraction</h3><p>Overriding, overloading concept, abstract class ও interface-এর role compare করুন।</p></div></label>
+<label class="day"><input type="checkbox" data-day="19"><div><h3>Day 19 — Exception Handling</h3><p><code>try/except</code> বনাম <code>try/catch/finally</code>; invalid input safeভাবে handle করুন।</p></div></label>
+<label class="day"><input type="checkbox" data-day="20"><div><h3>Day 20 — File Handling</h3><p>Text file read/write, data persistence; note বা simple record save/load করুন।</p></div></label>
+<label class="day"><input type="checkbox" data-day="21"><div><h3>Day 21 — Final Project</h3><p>Student Management System: Student, Course, Enrollment; CRUD menu, file save, error handling।</p></div></label>
+</div></section>
+<section class="notes"><h2>প্রতিদিনের Rule</h2><ul><li>প্রথমে problem ও pseudocode লিখুন, তারপর Python-এ solve করুন, শেষে একই solution C#-এ লিখুন।</li><li>একটি “Syntax Difference Notebook” রাখুন: typing, block, function, collection, OOP—প্রতিটি পার্থক্য লিখুন।</li><li>প্রতিদিন অন্তত 2–3 ঘণ্টা: 45 মিনিট concept, 90 মিনিট coding, 15 মিনিট নিজের code review।</li><li>Library/framework নয়; শুধু language core এবং built-in features ব্যবহার করুন।</li></ul></section>
+<p class="footer">Tip: সব checkbox browser-এর local storage-এ থাকে। অন্য browser/device-এ গেলে progress আলাদা থাকবে।</p>
+</main>
+<script>
+const boxes=[...document.querySelectorAll('input[type=checkbox]')], progress=document.getElementById('progress'), bar=document.getElementById('bar');
+function update(){const done=boxes.filter(x=>x.checked).length;progress.textContent=`${done} / 21 দিন সম্পন্ন`;bar.style.width=`${done/21*100}%`;boxes.forEach(x=>localStorage.setItem('python-csharp-day-'+x.dataset.day,x.checked));}
+boxes.forEach(x=>{x.checked=localStorage.getItem('python-csharp-day-'+x.dataset.day)==='true';x.addEventListener('change',update)});update();
+document.getElementById('reset').addEventListener('click',()=>{if(confirm('সব দিনের টিক মুছে ফেলবেন?')){boxes.forEach(x=>{x.checked=false;localStorage.removeItem('python-csharp-day-'+x.dataset.day)});update();}});
+</script>
+</body>
+</html>

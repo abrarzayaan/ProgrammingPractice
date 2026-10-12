@@ -1,0 +1,81 @@
+__$__ Level 1: Loop control ও সংখ্যা — ১–১০
+1. ১ থেকে N পর্যন্ত যোগফল: একটি positive integer N নিয়ে 1 + 2 + ... + N বের করো। N <= 0 হলে error দেখাও।
+2. নির্দিষ্ট ব্যবধানে সংখ্যা: start, end, step ইনপুট নিয়ে ওই range-এর সংখ্যা print করো। step শূন্য বা ভুল direction-এর হলে সেটি handle করো।
+3. Even/odd count: 1 থেকে N পর্যন্ত কয়টি even এবং কয়টি odd সংখ্যা আছে তা বের করো; দুই ধরনের সংখ্যার যোগফল N-এর সমান কি না যাচাই করো।
+4. Multiplication table: একটি সংখ্যা N এবং limit L নিয়ে N × 1 থেকে N × L পর্যন্ত print করো। L positive কি না যাচাই করো।
+5. Digit count ও digit sum: একটি integer-এর digit কয়টি এবং digit-গুলোর যোগফল বের করো। 0 এবং negative number-এর ক্ষেত্রেও সঠিক output দাও।
+6. সংখ্যা উল্টানো: integer-এর digit reverse করো—যেমন 4070 → 704। Negative sign কীভাবে রাখবে ঠিক করো; string conversion ছাড়া করার চেষ্টা করো।
+7. Palindrome number: কোনো integer reverse করলে আগের মতোই থাকে কি না loop দিয়ে পরীক্ষা করো। Negative input-কে কীভাবে classify করবে সেটাও নির্ধারণ করো।
+8. Factorial: N! loop দিয়ে বের করো। 0!-এর ফল ঠিক রাখো; negative input reject করো। বড় সংখ্যার জন্য overflow-ঝুঁকি নিয়ে মন্তব্য লেখো।
+9. Divisor ও perfect number: N-এর সব proper divisor print করো এবং divisor-গুলোর যোগফল N-এর সমান হলে perfect number বলো।
+10. GCD ও LCM: দুটি integer-এর GCD Euclidean loop দিয়ে বের করো। এরপর GCD ব্যবহার করে LCM বের করো; দুই input-ই 0 হলে কী করবে তা define করো।
+
+__$__ Level 2: Nested loop ও pattern — ১১–২০
+11. Prime check: N prime কি না loop দিয়ে নির্ধারণ করো। 1, 0, negative number, এবং 2-এর মতো edge case পরীক্ষা করো।
+12. Range-এর সব prime: start ও end-এর মধ্যে সব prime print করো এবং মোট কয়টি আছে গুনো। প্রতিটি সংখ্যার divisibility যাচাই করতে nested loop ব্যবহার করো।
+13. Prime factorization: একটি positive integer-কে prime factor-এর গুণফল হিসেবে প্রকাশ করো—যেমন 84 = 2 × 2 × 3 × 7। একই factor কতবার এসেছে সেটিও দেখাও।
+14. Fibonacci sequence: Nটি Fibonacci number print করো। প্রথম দুই term-এর convention স্পষ্ট করো, এবং N <= 0 handle করো।
+15. Armstrong number range: start থেকে end পর্যন্ত Armstrong number বের করো। প্রতিটি সংখ্যার digit-এর power নির্ধারণ করে loop দিয়ে যাচাই করো; string conversion ছাড়া করার চেষ্টা করো।
+16. Right triangle pattern: N row-এর pattern print করো; row i-তে iটি * থাকবে। ইনপুট N খুব বড় হলে output-size সমস্যা কীভাবে সীমিত করবে ভাবো।
+17. Number triangle: row i-তে 1 থেকে i পর্যন্ত সংখ্যা print করো; nested loop ব্যবহার করো।
+18. Hollow rectangle: rows ও columns নিয়ে border-এ * এবং ভেতরে space দিয়ে rectangle আঁকো। 1-row, 1-column, এবং 2×2 case পরীক্ষা করো।
+19. Floyd’s triangle: N row-এ 1 থেকে শুরু করে ধারাবাহিক সংখ্যা দিয়ে triangle print করো। outer loop ও inner loop-এর দায়িত্ব আলাদা করে বোঝাও।
+20. FizzBuzz triangle: N row-এর triangle-এ row i-তে 1 থেকে i পর্যন্ত দেখাও। 3 দিয়ে বিভাজ্য হলে Fizz, 5 দিয়ে হলে Buzz, দুটো দিয়েই হলে FizzBuzz—এবং মোট FizzBuzz কয়টি হয়েছে গুনো। Condition-এর order গুরুত্বপূর্ণ।
+
+__$__ Level 3: Condition, switch ও menu loop — ২১–৩০
+21. Menu-driven calculator: menu-তে যোগ, বিয়োগ, গুণ, ভাগ ও exit রাখো। menu loop চলবে যতক্ষণ user exit বেছে না নেয়। switch/match-case ব্যবহার করো; division by zero ও invalid option handle করো।
+22. Repeated grade classifier: Nটি grade character input নাও। switch/match-case দিয়ে grade অনুযায়ী message দাও; invalid grade গুনে শেষে মোট valid ও invalid grade দেখাও।
+23. Command-based number analyzer: while loop-এ বারবার number নাও; command অনুযায়ী even/odd, prime, palindrome বা digit sum বের করো। 0-কে exit sentinel ধরলে সেটি analyze-ও করতে চাইলে আলাদা command design করো।
+24. Menu-based unit converter: temperature, distance, weight—এই তিন ধরনের converter menu-তে রাখো। user যতক্ষণ exit না করে menu দেখাও; invalid option ও invalid value handle করো।
+25. Guessing game: random target number guess করাও। প্রতিবার “too high” বা “too low” বলো; সর্বোচ্চ attempt limit, invalid input, এবং replay option রাখো।
+26. Number guessing statistics: একাধিক round খেলতে দাও। প্রতিটি round-এ attempt count করো; শেষে total round, win count, average attempts, এবং best round দেখাও।
+27. Simple PIN retry system: user-কে সর্বোচ্চ 3 বার PIN দেওয়ার সুযোগ দাও। সঠিক PIN হলে success; ভুল হলে বাকি attempt দেখাও; limit শেষ হলে lockout। PIN-কে number হিসেবে নিলে leading zero হারানোর সমস্যা কীভাবে এড়াবে ভাবো।
+28. Nested menu system: main menu-তে “Reports”, “Settings”, “Exit”; Reports menu-তে “Daily”, “Monthly”, “Back” রাখো। nested loop এবং switch/match-case দিয়ে menu-গুলো চালাও। Back যেন শুধু submenu থেকে বের হয়, পুরো program থেকে নয়।
+29. Input validation loop: 1–100-এর মধ্যে integer না পাওয়া পর্যন্ত input চাইতে থাকো। এরপর user-কে operation বেছে নিতে দাও—square, factorial, prime check, digit sum। invalid operation হলে নতুন করে operation চাইবে, মূল number নয়।
+30. Text-based order menu: menu থেকে item বেছে quantity দাও; প্রতিটি item-এর subtotal হিসাব করো। user checkout না করা পর্যন্ত item যোগ হবে; checkout-এ item count, grand total, এবং গড় item price দেখাও। invalid item ও invalid quantity handle করো।
+
+
+Part B — ২০টি Production-style Problem
+এগুলোতে loop-এর পাশাপাশি input validation, aggregation, boundary case, এবং summary report অনুশীলন হবে। প্রথমে in-memory list/dictionary ব্যবহার করো; database বা framework লাগবে না।
+
+Sales, inventory ও reporting — ৩১–৪০
+Daily sales summary: এক দিনের Nটি transaction নাও। loop দিয়ে total sales, transaction count, average transaction, maximum sale, minimum sale, և refund total বের করো। Negative amount-কে refund হিসেবে classify করো, কিন্তু invalid amount-কে alag handle করো।
+
+Branch-wise sales report: Bটি branch-এর প্রতিটির জন্য D দিনের sales input নাও। nested loop দিয়ে branch total, company total, best-performing branch, এবং কোনো sales না-হওয়া দিন গুনো।
+
+Product stock checker: একাধিক product-এর opening_stock, sold, received নাও। প্রতিটি product-এর closing stock বের করো; negative stock হলে warning দেখাও, low-stock threshold-এর নিচে হলে reorder alert দাও।
+
+Stock movement ledger: একাধিক IN/OUT movement process করো। প্রতিটি movement-এর আগে quantity valid কি না যাচাই করো; OUT movement বর্তমান stock-এর চেয়ে বেশি হলে reject করো। শেষে stock balance ও rejected movement count দেখাও।
+
+Cart checkout: cart-এর item name, unit price, quantity ও discount rate নাও। item subtotal, item-level discount, cart total, এবং tax হিসাব করো। negative price, zero quantity, এবং 100%-এর বেশি discount reject করো।
+
+Order status report: একাধিক order-এর status—Pending, Paid, Shipped, Cancelled—switch/match-case দিয়ে classify করো। প্রতিটি status-এর count এবং total order value বের করো। Unknown status আলাদা গুনো।
+
+Top-selling product: প্রতিটি product-এর name ও sold quantity input নাও। loop দিয়ে top product, tied top product-গুলো, মোট unit sold এবং zero-sale product গুনো।
+
+Monthly expense report: 12 মাসের expense input নাও। বার্ষিক total, monthly average, সর্বোচ্চ ও সর্বনিম্ন expense-এর মাস বের করো; budget অতিক্রম করা মাস গুনো। Negative expense invalid হিসেবে ধরো, refund রাখতে হলে আলাদা field রাখো।
+
+CSV-ধাঁচের row validator: আগে থেকে দেওয়া record list-এ প্রতিটি row-তে product_id, quantity, price আছে কি না যাচাই করো। loop দিয়ে valid row total ও invalid row count বের করো; কোন validation rule ব্যর্থ হয়েছে সেটিও report করো।
+
+Shift-wise attendance summary: Eজন employee-এর D দিনের attendance status—Present, Absent, Leave—process করো। employee-wise attendance rate, total absence, এবং নির্দিষ্ট threshold-এর নিচে attendance থাকা employee বের করো।
+
+Business workflow simulation — ৪১–৫০
+Pharmacy expiry alert: প্রতিটি medicine batch-এর name, quantity, expiry date input নাও। date-library ব্যবহার না করে, আপাতত “আজ থেকে আর কত দিন বাকি” integer হিসেবে নাও; expired, near-expiry, এবং safe batch গুনে report করো। Negative quantity reject করো।
+
+Pharmacy sale bill: একাধিক medicine item-এর price ও quantity নিয়ে bill তৈরি করো। stock-এর চেয়ে বেশি quantity চাইলে sale reject করো; valid sale-এর stock কমাও। শেষে subtotal, discount, VAT/ট্যাক্সের rate, এবং grand total দেখাও।
+
+POS cash register: cashier-এর প্রতিটি sale-এর amount এবং payment method—Cash, Card, Mobile Banking—process করো। switch/match-case দিয়ে method অনুযায়ী classify করো; method-wise total এবং overall total দেখাও। Invalid method-এর sale আলাদা গুনো।
+
+Refund ও net revenue: transaction-এ Sale, Refund, Void—এই তিন type রাখো। loop ও switch দিয়ে gross sales, refunds, void count, net revenue বের করো। Refund amount original sale-এর বেশি হলে flag করো।
+
+Employee payroll calculator: একাধিক employee-এর regular hours, overtime hours ও hourly rate নিয়ে gross pay হিসাব করো। overtime rate আলাদা রাখো; negative hours/rate reject করো; total payroll ও সর্বোচ্চ pay পাওয়া employee দেখাও।
+
+Customer loyalty points: একাধিক order থেকে eligible amount নিয়ে points জমাও; return/refund হলে points কমাও। balance negative হতে পারবে কি না policy ঠিক করো; invalid refund flag করো; শেষে customer-wise balance দেখাও।
+
+Rate-limited login simulation: user-এর login attempts list process করো। প্রতিটি user-এর failed attempt গুনো; নির্দিষ্ট consecutive failure-এর পর locked state দাও; success হলে consecutive-failure counter reset করো। সবশেষে locked account ও total failed login report করো।
+
+API request summary: আগে থেকে থাকা request log list-এ status code ও response time থাকবে। loop দিয়ে 2xx, 4xx, 5xx count, average response time, slow request count, এবং 5xx-এর error rate বের করো। শূন্য request থাকলে division by zero ঠেকাও।
+
+Batch import processor: record list-এর প্রতিটি row-তে required field ও numeric value validate করো। valid record count, rejected record count, duplicate ID count, এবং rejection reason অনুযায়ী count রাখো। একটি খারাপ row-এর জন্য পুরো batch থামিও না।
+
+Inventory reorder report: প্রতিটি product-এর stock, average daily sales, supplier lead time, safety stock নাও। loop দিয়ে reorder point ও suggested order quantity বের করো; stock reorder point-এর নিচে হলে REORDER দেখাও। zero daily sales, negative lead time, এবং invalid product data handle করো।
