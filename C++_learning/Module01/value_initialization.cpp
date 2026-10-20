@@ -35,6 +35,9 @@ int num {10};                  // সাধারণ ভ্যারিয়েব
 int arr[3] {1, 2, 3};          // অ্যারে (সমান চিহ্ন দেওয়ারও দরকার নেই)
 std::string name {"Rahim"};    // স্ট্রিং বা অবজেক্ট
 
+__#$__Implicit Conversion এবং Explicit Conversion (বা Type Casting)
+
+
 */
 
 
@@ -42,8 +45,12 @@ std::string name {"Rahim"};    // স্ট্রিং বা অবজেক�
 
 int main() {
     int value1 {};
+    int value3 {};
     int value2 = 10.5;
 
+
+    std::cout << "Enter the input number of value1: "; 
+    std::cin >> value1;
     std::cout << "Result: " << value1 <<std::endl;
     std::cout << "Result: " << value2 <<std::endl;
     return 0;
