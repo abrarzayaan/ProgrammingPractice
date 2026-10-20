@@ -1,15 +1,11 @@
 #include <iostream>
-void functionOfMod(float modValue) {
-    
-} 
 
-void functionOfdevided(float devidedValue){
-    float returnValue;
-    returnValue = devidedValue / 10;
-    
-}
+int main() {
+    int value1 {};
+    int value2 = 10.5;
 
-int main(){
-    functionOfdevided(210);
-    functionOfMod();
+    std::cout << "Result: " << value1 <<std::endl;
+    std::cout << "Result: " << value2 <<std::endl;
+    return 0;
+
 }
