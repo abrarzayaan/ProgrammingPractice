@@ -36,6 +36,34 @@ app.py  →  Python interpreter  →  bytecode  →  Python VM  →  CPU instruc
 সহজ করে বললে, C++-এ CPU সরাসরি তোমার compiled program চালায়। Python-এ CPU আসলে Python interpreter program চালায়; 
 সেই interpreter তোমার Python code-এর instruction পড়ে এবং CPU-র জন্য কাজ করে।
 
+Example:
++-------------------+
+|  script.py        |  (High-level Source Code)
++---------+---------+
+          |
+   [Compilation Phase]
+          |  1. Lexical Analysis (Tokens)
+          |  2. Parsing (Abstract Syntax Tree / AST)
+          |  3. Bytecode Compilation
+          v
++-------------------+
+|  script.cpython   |  (Bytecode: .pyc file / Memory Code Object)
+|  .pyc             |
++---------+---------+
+          |
+  [Execution Phase]
+          |  4. CPython Virtual Machine (Eval Loop)
+          v
++-------------------+
+|  CPython VM       |  (Giant C switch-case loop executing opcodes)
++---------+---------+
+          |
+          |  Machine Instructions
+          v
++-------------------+
+|  CPU Hardware     |  (Actual Silicon Execution)
++-------------------+
+
 
 __$__: File processing কীভাবে হয়?
 File processing-এ পার্থক্য মূলত কে file read করে ও কে processing logic চালায়—দুই ক্ষেত্রেই শেষ পর্যন্ত OS ও CPU কাজ করে।
