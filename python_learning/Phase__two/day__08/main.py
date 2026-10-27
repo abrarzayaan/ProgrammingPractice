@@ -119,3 +119,20 @@ def add(a, b):
  
 
 """
+
+# লাইন ১০০:
+def calc_tax(income):
+    rate = 0.10             # লাইন ১০১
+    return income * rate    # লাইন ১০২
+
+# লাইন ২০০:
+def process_salary(base):
+    bonus = 500             # লাইন ২০১
+    total = base + bonus    # লাইন ২০২
+    tax = calc_tax(total)   # লাইন ২০৩ (এখানে Nested Function Call হচ্ছে)
+    net = total - tax       # লাইন ২০৪ (ট্যাক্স হিসাব শেষে এখানে ফিরতে হবে)
+    return net              # লাইন ২০৫
+
+# লাইন ৩০০ (Main Program):
+final = process_salary(5000) # লাইন ৩০১
+print(final)                 # লাইন ৩০২ (স্যালারি হিসাব শেষে এখানে ফিরতে হবে)
