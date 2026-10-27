@@ -40,3 +40,110 @@ main() হলো একটি সি প্রোগ্রামের Entry Poi
 
 
 main()-এর উপাদান বিশ্লেষণ:
+
+1. int (Return Type):
+ - main কোনো সাধারণ ফাংশনের মতো অন্য কোডকে ডেটা রিটার্ন করে না; এটি রিটার্ন করে সরাসরি অপারেটিং সিস্টেমকে।
+ - এই ইন্টিজারকে বলা হয় Exit Status Code।
+ - return 0; মানে হলো: "প্রোগ্রাম কোনো ত্রুটি ছাড়াই সফলভাবে সম্পন্ন হয়েছে।"
+ - যদি কোনো কারণে return 1; বা অন্য কোনো নন-জিরো মান দেওয়া হয়, OS বা টার্মিনাল বোঝে প্রোগ্রামে কোনো ক্র্যাশ বা এরর হয়েছে।
+
+2. int argc, char *argv[] (Parameters):
+ - argc (Argument Count): টার্মিনাল বা কমান্ড লাইন থেকে কয়টি আর্গুমেন্ট পাঠানো হয়েছে তার সংখ্যা।
+ - argv (Argument Vector): কমান্ড লাইন থেকে পাঠানো আর্গুমেন্টগুলোর স্ট্রিং পয়েন্টার অ্যারে। OS এই ডেটাগুলো ব্যবহারকারীর টার্মিনাল থেকে তুলে main-এর স্ট্যাকে পুশ করে দেয়।
+
+২. C-তে ফাংশনের ৩টি ধাপ (Lifecycle)
+C ল্যাঙ্গুয়েজে একটি কাস্টম ফাংশন ৩টি নির্দিষ্ট ধাপে বিভক্ত:
+
+ধাপ ১: Function Prototype বা Declaration (int calculate_square(int num);)
+ > কি: ফাংশনের সম্পূর্ণ বডি ছাড়া শুধু রিটার্ন টাইপ, নাম এবং প্যারামিটার লিখে সেমিকোলন দিয়ে শেষ করা।
+ > কেন দরকার হয়েছিল (Invention Reason):
+   - ৭০-এর দশকে যখন C উদ্ভাবিত হয়, তখন কম্পিউটারের র‍্যাম ছিল অত্যন্ত কম।
+   - C কম্পাইলার ছিল Single-Pass Compiler—অর্থাৎ কোড ওপর থেকে নিচে মাত্র একবার পড়ে বাইনারি তৈরি করত, পেছনের লাইনে ফিরে যেতে পারত না।
+   - main() যদি লাইনের শুরুতে থাকে এবং সেখানে এমন একটি ফাংশন কল করা হয় যা ফাইলের নিচে লেখা, তাহলে কম্পাইলার তা চিনত না।
+   - তাই কম্পাইলারকে আগেই একটি প্রমিস বা চুক্তিপত্র দিতে হতো: "তুমি নিচে এমন একটি ফাংশন পাবে যার নাম calculate_square, সে একটি int নেবে এবং একটি int ফেরত দেবে। 
+     তুমি এর জন্য উপযুক্ত মেমরি স্ট্যাক প্রস্তুত রাখো।"
+
+ধাপ ২: Function Call (calculate_square(input);)
+ > কি: ফাংশনটিকে এক্সিকিউট করার জন্য ডাকা।
+ > মেমরিতে কী ঘটে:
+   - মূল ভ্যারিয়েবল input-এর মান কপি হয়ে স্ট্যাকের মাধ্যমে calculate_square-এর প্যারামিটার num-এ যায় (Pass by Value)।
+   - CPU তার বর্তমান লাইনের ঠিকানা স্ট্যাকে রেখে calculate_square-এর মেমরি অ্যাড্রেসে জাম্প করে।
+ 
+ধাপ ৩: Function Definition (int calculate_square(int num) { ... })
+ > কি: ফাংশনের আসল কোড ব্লক বা বাস্তবায়নের জায়গা।
+ > উপাদানসমূহ:
+   - Header: int calculate_square(int num) — এটি প্রোটোটাইপের সাথে শতভাগ মিলতে হবে।
+   - Scope Delimiter ({ }): এর ভেতর যা ঘোষণা করা হবে (যেমন int answer;), তা লোকাল স্ট্যাক ফ্রেমে সীমাবদ্ধ।
+   - Return Statement (return answer;): লোকাল স্ট্যাক ভেঙে ফেলার ঠিক আগে CPU-র নির্দিষ্ট হার্ডওয়্যার রেজিস্টারে (x86 আর্কিটেকচারে EAX/RAX) মানটি লিখে দেওয়া, যাতে কলার ফাংশন তা সংগ্রহ করতে পারে।
+
+
+এখনে আমরা একটা জিনিস যদি খেয়াল করি তবে দেখব সেটা হলো:
+C তে Function Declaration আগে করা হয়েছে। তাহলে আমার প্রশ্ন হলো? আমারা কি Function Declaration কে বাদ দিয়ে Main এর আগে Function Definition use kore কোড করতে পারি???
+answer: হ্যাঁ, calculate_square()-এর definition তুমি main()-এর আগেই লিখতে পারো। তখন আলাদা করে int calculate_square(int num); 
+prototype লেখার প্রয়োজন নেই—কারণ এই definition নিজেই declaration এবং prototype-এর কাজও করে।
+
+__code__(02):
+{
+    #include <stdio.h>
+
+    int calculate_square(int num) // Definition: declaration + implementation
+    {
+        int answer = num * num;
+        return answer;
+    }
+
+    int main(void)
+    {
+        int input = 5;
+
+        int result = calculate_square(input);
+
+        printf("Result: %d\n", result);
+
+        return 0;
+    }
+}
+
+এখানে compiler main()-এর মধ্যে calculate_square(input) call দেখার আগেই function-এর definition পেয়েছে। এই parameter-list-সহ definition ভবিষ্যৎ calls-এর জন্য prototype হিসেবেও কাজ করে।
+উদাহরণে command-line arguments ব্যবহার করছি না বলে main(void) লিখেছি। তোমার দেওয়া main(int argc, char *argv[]) form-টিও valid।
+
+
+
+২. Declaration আর definition-এর সম্পর্কটা কী? 
+
+দুটি আলাদা জিনিস হিসেবে পাশাপাশি দেখি।
+{
+    শুধু declaration / prototype:
+    int calculate_square(int num);
+
+    এখানে compiler জানতে পারে:
+    নাম:            calculate_square
+    Parameter:      একটি int
+    Return type:    int
+    
+    কিন্তু calculation কীভাবে হবে, তা এখানে নেই।
+}
+
+
+{
+    Definition
+    int calculate_square(int num)
+    {
+        return num * num;
+    }
+    এখানে আগের তথ্যগুলোর পাশাপাশি body-ও আছে।
+
+    তাই সম্পর্কটা এমন:
+    এই function prototype:
+        function-এর পরিচয় জানায়।
+
+    এই function definition:
+        function-এর পরিচয় জানায়
+        + function-এর body দেয়।
+
+}
+
+C-তে body-সহ function declaration-ই function definition। অর্থাৎ definition-ও declaration-এর একটি রূপ।
+সুতরাং এই ধারণা ঠিক নয়:
+আগে অবশ্যই আলাদা declaration লিখতে হবে।
+তারপরই definition লেখা যাবে।
