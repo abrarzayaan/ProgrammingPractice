@@ -47,3 +47,26 @@ __code__(02):
 আপনি এর নাম def start(): বা def amar_code(): দিয়ে নিচে amar_code() কল করলেও প্রোগ্রাম হুবহু একই কাজ করবে। 
 CPU বা পাইথন ইন্টারপ্রেটার main নামটিকে কোনো বাড়তি প্রটোকল দেয় না। 
 
+
+C/C++ বনাম Python Function: পূর্ণাঙ্গ ব্যবচ্ছেদ
+সি এবং পাইথনের ফাংশন ধারণাগতভাবে এক মনে হলেও ভেতরের আর্কিটেকচার সম্পূর্ণ ভিন্ন।
+
+[ C Language Architecture ]
+Code (.c) ---> [Compiler] ---> Machine Code (.text segment)
+                                     |
+                          OS CPU Instruction Pointer
+                                     v
+                           Direct Jump to main()
+
+-------------------------------------------------------------
+
+[ Python Architecture ]
+Code (.py) ---> Bytecode (.pyc) ---> [CPython VM (Virtual Machine)]
+                                             |
+                                  Line 1 থেকে এক্সিকিউট শুরু
+                                             v
+                           হিপে অবজেক্ট তৈরি হতে হতে নিচে নামে
+
+
+
+
